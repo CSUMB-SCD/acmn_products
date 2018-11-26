@@ -7,10 +7,10 @@ public class Picture{
         this.link = link;
     }
 
-    public void setName(String link){
+    public void setPicture(String link){
         this.link = link;
     }
-    public String getName(){
+    public String getPicture(){
         return this.link;
     }
 }
