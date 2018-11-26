@@ -11,12 +11,14 @@ public class Phone{
     private Quantity qty;
     private Description description;
     private Picture picture;
+    private Price price;
 
-    public Phone(Name name, Quantity qty, Description description, Picture picture){
+    public Phone(Name name, Quantity qty, Description description, Picture picture, Price price){
         this.name = name;
         this.qty = qty;
         this.description = description;
         this.picture = picture;
+        this.price = price;
     }
 
     public void setName(Name name){
@@ -42,5 +44,11 @@ public class Phone{
     }
     public Picture getPicture(){
         return this.picture;
+    }
+    public Price getPrice(){
+        return this.price;
+    }
+    public void setPrice(Price price){
+        this.price = price;
     }
 }
