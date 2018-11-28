@@ -20,7 +20,9 @@ public class Phone{
         this.picture = picture;
         this.price = price;
     }
-
+    public String getId(){
+        return this.id;
+    }
     public void setName(Name name){
         this.name = name;
     }
