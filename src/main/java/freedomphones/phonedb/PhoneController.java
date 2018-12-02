@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import freedomphones.phonedb.phones.Phone;
-
-@CrossOrigin
 @RestController
 public class PhoneController{
     @Autowired
     IPhoneRepository phoneRepository;
 
+    @CrossOrigin
     @GetMapping("/allPhones")
     public List<Phone> getAll(){
         List<Phone> phones = phoneRepository.findAll();
         return phones; 
     }
+    @CrossOrigin
     @GetMapping("/findById/{id}")
     public Optional<Phone> getById(@PathVariable String id){
         Optional<Phone> phone = phoneRepository.findById(id);
