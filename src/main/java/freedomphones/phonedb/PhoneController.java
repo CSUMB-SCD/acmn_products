@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import freedomphones.phonedb.phones.Phone;
-@CrossOrigin
+@CrossOrigin(origins = "*", allowedHeaders= "*")
 @RestController
 public class PhoneController{
     @Autowired
