@@ -1,16 +1,24 @@
 package freedomphones.phonedb.phones;
 
 public class Picture{
-    private String link;
+    private String lowres;
+    private String highres;
 
-    public Picture(String link){
-        this.link = link;
+    public Picture(String lowres, String highres){
+        this.lowres = lowres;
+        this.highres = highres;
     }
 
-    public void setPicture(String link){
-        this.link = link;
+    public void setLowRes(String link){
+        this.lowres = link;
     }
-    public String getPicture(){
-        return this.link;
+    public String getLowRes(){
+        return this.lowres;
+    }
+    public void setHighRes(String link){
+        this.highres = link;
+    }
+    public String getHighRes(){
+        return this.highres;
     }
 }
