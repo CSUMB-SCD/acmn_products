@@ -17,9 +17,11 @@ public class PhoneController{
     IPhoneRepository phoneRepository;
 
     @GetMapping("/allPhones")
-    public List<Phone> getAll(){
+    public PhoneList getAll(){
         List<Phone> phones = phoneRepository.findAll();
-        return phones; 
+        PhoneList phonelist = new PhoneList();
+        phonelist.phones = phones;
+        return phonelist; 
     }
     @GetMapping("/findById/{id}")
     public Optional<Phone> getById(@PathVariable String id){
