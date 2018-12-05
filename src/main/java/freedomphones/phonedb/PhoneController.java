@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import freedomphones.phonedb.phones.Phone;
@@ -17,14 +18,15 @@ public class PhoneController{
     IPhoneRepository phoneRepository;
 
     @GetMapping("/allPhones")
-    public PhoneList getAll(){
+    @ResponseBody
+    PhoneList getAll(){
         List<Phone> phones = phoneRepository.findAll();
         PhoneList phonelist = new PhoneList();
         phonelist.phones = phones;
         return phonelist; 
     }
     @GetMapping("/findById/{id}")
-    public Optional<Phone> getById(@PathVariable String id){
+    Optional<Phone> getById(@PathVariable String id){
         Optional<Phone> phone = phoneRepository.findById(id);
         return phone;
     }
