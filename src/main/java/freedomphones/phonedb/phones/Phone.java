@@ -7,13 +7,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Phone{
     @Id
     private String id;
-    private Name name;
-    private Quantity qty;
-    private Description description;
+    private String name;
+    private Integer qty;
+    private String description;
     private Picture picture;
-    private Price price;
+    private Double price;
 
-    public Phone(Name name, Quantity qty, Description description, Picture picture, Price price){
+    public Phone(String name, Integer qty, String description, Picture picture, Double price){
         this.name = name;
         this.qty = qty;
         this.description = description;
@@ -23,22 +23,22 @@ public class Phone{
     public String getId(){
         return this.id;
     }
-    public void setName(Name name){
+    public void setName(String name){
         this.name = name;
     }
-    public Name getName(){
+    public String getName(){
         return this.name;
     }
-    public void setQty(Quantity qty){
+    public void setQty(Integer qty){
         this.qty = qty;
     }
-    public Quantity getQty(){
+    public Integer getQty(){
         return this.qty;
     }
-    public void setDescription(Description description){
+    public void setDescription(String description){
         this.description = description;
     }
-    public Description getDescription(){
+    public String getDescription(){
         return this.description;
     }
     public void setPicture(Picture picture){
@@ -47,10 +47,10 @@ public class Phone{
     public Picture getPicture(){
         return this.picture;
     }
-    public Price getPrice(){
+    public Double getPrice(){
         return this.price;
     }
-    public void setPrice(Price price){
+    public void setPrice(Double price){
         this.price = price;
     }
 }
