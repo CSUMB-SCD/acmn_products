@@ -18,10 +18,10 @@ public class ItemInfo{
     public void setName(String name){
         this.name = name;
     }
-    public Integer getStock(){
+    public Integer getIn_stock(){
         return this.in_stock;
     }
-    public void setStock(Integer in_stock){
+    public void setIn_stock(Integer in_stock){
         this.in_stock = in_stock;
     }
     public Double getPrice(){
