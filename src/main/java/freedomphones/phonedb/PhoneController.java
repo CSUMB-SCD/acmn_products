@@ -30,4 +30,18 @@ public class PhoneController{
         Optional<Phone> phone = phoneRepository.findById(id);
         return phone;
     }
+    @GetMapping("/getStock")
+    @ResponseBody
+    Stock getStock(){
+        Stock stock = new Stock();
+        List<Phone> phones = phoneRepository.findAll();
+        for(int i = 0; i < phones.size(); i++){
+            ItemInfo item = new ItemInfo(phones.get(i).getName(),
+                                    phones.get(i).getQty(),
+                                    phones.get(i).getPrice());
+            stock.stock.put(phones.get(i).getId(), item);
+        }
+        return stock;
+    }
+
 }
