@@ -12,4 +12,7 @@ import freedomphones.phonedb.phones.Phone;
 public interface IPhoneRepository extends MongoRepository<Phone, String> {
     @Query(value = "{'id':?0}")
     Optional<Phone> findById(String id);
+
+    @Query(value = "{'id':?0}")
+    Phone getById(String id);
 }

@@ -43,5 +43,13 @@ public class PhoneController{
         }
         return stock;
     }
+    @GetMapping("removeQuantity/{prod_id}/{quantity}")
+    @ResponseBody
+    String removeQuantity(@PathVariable String prod_id, @PathVariable Integer quantity){
+        Phone phone = phoneRepository.getById(prod_id);
+        phone.setQty(phone.getQty() - quantity);
+        phoneRepository.save(phone);
+        return "Success";
+    }
 
 }
